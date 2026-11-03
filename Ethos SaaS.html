@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Ethos: sell what you know, get paid every day</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e0c'/%3E%3Crect x='10' y='16' width='44' height='9' rx='4.5' fill='%23f59a3c'/%3E%3Crect x='10' y='29' width='30' height='9' rx='4.5' fill='%236fdc57'/%3E%3Crect x='10' y='42' width='18' height='9' rx='4.5' fill='%232f9a45'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0a0a0a;--card:#141414;--card2:#1b1b1b;--line:#262626;--ink:#f5f5f5;--mute:#9a9a9a;--dim:#646464;--or:#fa4616;--or2:#ff6a3d;--glow:0 10px 28px -10px rgba(250,70,22,.75);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 16px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:20}
+a{color:inherit;text-decoration:none}button,input{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px;border-radius:12px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(10,10,10,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.03em}
+.mk{width:28px;height:28px;border-radius:9px;background:var(--or);display:grid;place-items:center}
+.mk::after{content:"";width:10px;height:10px;border-radius:50%;border:3px solid #fff}
+.nav nav{display:flex;gap:26px;font-size:15px;font-weight:700;color:var(--mute);flex:1}
+.nav nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 22px;border-radius:12px;font-weight:700;font-size:15px;border:1px solid var(--line);background:var(--card);transition:background .15s,transform .15s}
+.btn:hover{background:var(--card2)}
+.btn.or{background:var(--or);border-color:var(--or);color:#fff;box-shadow:var(--glow)}
+.btn.or:hover{background:var(--or2);transform:translateY(-1px)}
+.btn.lg{height:54px;padding:0 30px;font-size:16px;border-radius:14px}
+.hero{padding:76px 0 88px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+h1{font-size:clamp(42px,6vw,76px);line-height:1;letter-spacing:-.045em;font-weight:800;margin:0 0 22px}
+h1 em{font-style:normal;color:var(--or)}
+.lead{color:var(--mute);font-size:19px;max-width:30em;margin:0 0 30px}
+.search{display:flex;gap:8px;padding:8px;background:var(--card);border:1px solid var(--line);border-radius:18px;max-width:600px}
+.search:focus-within{border-color:var(--or)}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;padding:0 14px;font-size:16px}
+.search input::placeholder{color:var(--dim)}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.pill{height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mute);font-weight:700;font-size:14px}
+.pill:hover{color:#fff;border-color:#444}
+.pill[aria-pressed=true]{background:#fff;color:#0a0a0a;border-color:#fff}
+.feed{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:20px}
+.fh{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;margin-bottom:14px}
+.live{width:9px;height:9px;border-radius:50%;background:var(--or);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(250,70,22,0)}0%{box-shadow:0 0 0 0 rgba(250,70,22,.5)}}
+.fr{display:flex;align-items:center;gap:14px;padding:14px;background:var(--card2);border-radius:16px;margin-top:10px;animation:in .45s ease both}
+@keyframes in{from{opacity:0;transform:translateY(-8px)}}
+.th{width:46px;height:46px;border-radius:12px;flex:none;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff}
+.fr b{display:block;font-size:15px;line-height:1.3}.fr small{color:var(--mute);font-size:13px}
+.fr .amt{margin-left:auto;color:var(--or);font-weight:800;font-variant-numeric:tabular-nums}
+.ff{margin-top:14px;font-size:12px;color:var(--dim)}
+section.s{padding:88px 0;border-top:1px solid var(--line)}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+h2{font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.04em;font-weight:800;margin:0;max-width:15em}
+.p{color:var(--mute);font-size:18px;margin:12px 0 0;max-width:32em}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--or);transform:translateY(-3px)}
+.art{height:136px;display:flex;align-items:flex-end;padding:14px;font-weight:800;font-size:32px;letter-spacing:-.04em;color:#fff}
+.card .b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:3px;flex:1}
+.k{color:var(--or);font-size:13px;font-weight:700}
+.card h3{margin:0;font-size:16px;line-height:1.35;font-weight:700}
+.by{color:var(--mute);font-size:13px}
+.meta{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;font-weight:800;font-size:15px}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:48px 0}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.big{font-size:clamp(52px,7vw,84px);font-weight:800;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.row{margin:0 0 24px}
+.row label{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:10px}
+.row output{color:var(--mute);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--or);height:5px}
+.bars{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.br{position:relative;display:flex;justify-content:space-between;align-items:center;height:68px;padding:0 24px;border-bottom:1px solid var(--line);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.br i{position:absolute;left:0;top:0;bottom:0;width:var(--w);background:rgba(255,255,255,.08);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.br.k2 i{background:linear-gradient(90deg,rgba(250,70,22,.25),rgba(250,70,22,.85))}
+.br span{position:relative}
+.bars .f{padding:16px 24px;font-size:13px;color:var(--dim)}
+.ft{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:12px;min-height:250px}
+.ic{width:46px;height:46px;border-radius:14px;background:rgba(250,70,22,.14);color:var(--or);display:grid;place-items:center;font-weight:800;font-size:20px}
+.fc h3{margin:8px 0 0;font-size:22px;letter-spacing:-.03em;font-weight:800}
+.fc p{margin:0;color:var(--mute)}
+.fin{margin:0 24px 88px;border-radius:32px;background:var(--or);color:#fff;text-align:center;padding:88px 24px}
+.fin h2{margin:0 auto 16px;max-width:13em}
+.fin p{margin:0 auto 30px;font-size:19px;color:rgba(255,255,255,.88);max-width:28em}
+.fin .btn{background:#0a0a0a;border-color:#0a0a0a;color:#fff;box-shadow:none}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:960px){.hero,.est{grid-template-columns:1fr}.hero{padding:48px 0 56px}.grid{grid-template-columns:repeat(2,1fr)}.ft{grid-template-columns:1fr}.fc{min-height:0}.nav nav{display:none}.nav{justify-content:space-between}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.wrap{padding:0 18px}section.s{padding:60px 0}.search .btn{padding:0 16px}.nav .btn:not(.or){display:none}.fin{margin:0 18px 60px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.dash{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:16px;border-radius:30px;background:linear-gradient(160deg,#3b4659,#1c222e 55%,#262d3c);border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 80px -40px #000}
+.sb{display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px 0;background:rgba(0,0,0,.28);border-radius:18px;align-self:start}
+.sb b{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:var(--mute);font-size:15px}.sb b.on{background:rgba(255,255,255,.14);color:#fff}
+.dm{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}.lc,.rc{display:grid;gap:16px;align-content:start;min-width:0}
+.dsr{grid-column:1/-1;padding:13px 18px;background:rgba(0,0,0,.3);border-radius:14px;color:var(--mute);font-size:15px}
+.gl{background:rgba(16,20,28,.74);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:18px;backdrop-filter:blur(8px)}
+.gl h4{margin:0 0 12px;font-size:16px;font-weight:700}.gl small{color:var(--mute);font-size:12px;display:block}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}
+.sc{position:relative;overflow:hidden;height:130px;border-radius:20px;padding:16px;background:linear-gradient(180deg,var(--a),rgba(28,34,46,.96) 92%);display:flex;flex-direction:column;justify-content:space-between}
+.sc small{color:#222833;font-weight:700;font-size:13px;line-height:1.3}.sc b{font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.sc::before,.sc::after{content:"";position:absolute;width:84px;height:84px;border-radius:20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);transform:rotate(45deg);right:-26px;top:22px}.sc::after{right:-6px;top:38px}
+.tr{display:grid;grid-template-columns:104px 1fr;align-items:center;height:46px;border-top:1px solid rgba(255,255,255,.06);font-size:13px}.tr>span{color:var(--mute)}
+.trk{position:relative;height:100%;background:repeating-linear-gradient(90deg,transparent 0 calc(14.28% - 1px),rgba(255,255,255,.06) calc(14.28% - 1px) 14.28%)}
+.th2{height:30px;border:0}.th2 .trk{display:grid;grid-template-columns:repeat(7,1fr);align-items:center;background:none}.th2 em{font-style:normal;font-size:11px;color:var(--dim)}
+.bar{position:absolute;top:8px;bottom:8px;left:var(--l);width:var(--w);display:flex;align-items:center;padding:0 10px;border-radius:9px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);font-size:11px;white-space:nowrap;overflow:hidden}.bar.on{border-color:var(--or);box-shadow:0 0 14px -4px var(--or)}
+.pay{font-size:40px;font-weight:800;letter-spacing:-.04em;margin:6px 0 2px}
+.bt{display:flex;gap:10px;margin-top:16px}.bt button{flex:1;height:42px;border-radius:12px;border:0;font-weight:700}.pk{background:#f6c4c6;color:#3a1d22}.dk{background:rgba(255,255,255,.08)}
+.dl{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:14px}.dl b{display:block;font-weight:700}
+.dl input{appearance:none;-webkit-appearance:none;width:36px;height:20px;border-radius:99px;margin:0;cursor:pointer;background:radial-gradient(circle,#fff 7px,transparent 8px) 3px center/20px 20px no-repeat #444}.dl input:checked{background-position:calc(100% - 3px) center;background-color:var(--or)}
+.act{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;text-align:center}.day{height:150px;border-radius:99px;background:rgba(255,255,255,.06);display:flex;flex-direction:column-reverse;align-items:center;gap:3px;padding:8px 0;margin-bottom:6px}.day i{width:12px;height:12px;border-radius:50%;display:block}
+.lr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;margin-top:8px;background:#1d222c;border-radius:14px;font-size:14px}.lr b{display:block;font-weight:700}
+.bd{font-size:11px;font-weight:800;padding:4px 9px;border-radius:7px;white-space:nowrap}.bd.C{background:rgba(110,200,150,.18);color:#8fe0b0}.bd.I{background:rgba(250,200,80,.16);color:#f2d27a}.bd.N{background:rgba(250,70,22,.18);color:#ff8a5c}
+@media(max-width:960px){.dash{grid-template-columns:1fr}.sb{display:none}.dm{grid-template-columns:1fr}}
+:root{--bg:#070908;--card:#0f1210;--card2:#151a16;--line:#212823;--or:#6fdc57;--or2:#8cf070;--hot:#f59a3c;--glow:0 10px 28px -10px rgba(111,220,87,.6)}
+body{background:radial-gradient(60% 34% at 85% 0,rgba(80,200,90,.12),transparent 70%),radial-gradient(50% 30% at 0 40%,rgba(40,140,70,.08),transparent 70%),var(--bg)}
+html,body::before,header{background-color:var(--bg)}header{background:rgba(7,9,8,.85)}
+.btn.or{color:#06140a}.mk::after{border-color:#06140a}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(111,220,87,0)}0%{box-shadow:0 0 0 0 rgba(111,220,87,.5)}}
+.ic{background:rgba(111,220,87,.12)}.br.k2 i{background:linear-gradient(90deg,rgba(111,220,87,.15),rgba(111,220,87,.8))}
+.fin{background:linear-gradient(135deg,#7fe665,#2f9a45 70%,#1d6b34);color:#06140a}.fin p{color:rgba(6,20,10,.78)}.fin .btn{background:#070908;border-color:#070908;color:#fff}
+.dash{background:linear-gradient(160deg,#1d2620,#0b0e0c 55%,#111813);border-color:rgba(255,255,255,.08)}
+.sb{background:rgba(0,0,0,.35)}.gl{background:rgba(10,13,11,.78)}.lr{background:#121712}
+.sc:nth-child(1){--a:#a6f08a!important}.sc:nth-child(2){--a:#58cc6a!important}.sc:nth-child(3){--a:#f5a65a!important}
+.sc{background:linear-gradient(180deg,var(--a),rgba(11,14,12,.96) 92%)}.sc small{color:#0a1a0d}
+.pk{background:var(--or);color:#06140a}.bd.N{background:rgba(245,154,60,.16);color:var(--hot)}.bd.C{background:rgba(111,220,87,.15);color:#8cf070}
+.bar.on{border-color:var(--or);box-shadow:0 0 14px -4px var(--or)}
+.logo{gap:12px}.logo svg{flex:none}.wm{font-weight:700;font-size:16px;letter-spacing:.24em;color:#fff}
+.fl{display:inline-flex;align-items:center;gap:10px}.sb>svg{margin-bottom:6px}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#top" aria-label="Ethos home"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="14" width="52" height="10" rx="5" fill="#f59a3c"/><rect x="6" y="28" width="36" height="10" rx="5" fill="#6fdc57"/><rect x="6" y="42" width="22" height="10" rx="5" fill="#2f9a45"/></svg><span class="wm">ETHOS</span></a>
+<nav><a href="#browse">Discover</a><a href="#earn">Earnings</a><a href="#sellers">Sell</a><a href="#dash">Dashboard</a></nav>
+<a class="btn" href="#browse">Log in</a><a class="btn or" href="#earn">Start selling</a>
+</div></header>
+<main id="top">
+<div class="wrap hero">
+<div>
+<h1>Sell what you know. <em>Get paid</em> every day.</h1>
+<p class="lead">Services, courses, templates, and memberships in one storefront. Affiliates help you sell, and escrow keeps every payment safe until the work is done.</p>
+<form class="search" id="sf" role="search"><input id="q" type="search" placeholder="Search services, courses, templates" aria-label="Search the marketplace"><button class="btn or" type="submit">Search</button></form>
+<div class="cats" id="hcats"></div>
+</div>
+<div class="feed" aria-label="Sample live sales">
+<div class="fh"><span class="live"></span>Sales happening now</div>
+<div id="fl"></div>
+<div class="ff">Sample activity for this concept preview.</div>
+</div>
+</div>
+
+<section class="s" id="browse"><div class="wrap">
+<div class="sh"><div><h2>Trending on Ethos</h2><p class="p">Hire a specialist, join a membership, or grab a template that saves you a week.</p></div></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section class="s" id="earn"><div class="wrap">
+<div class="sh"><div><h2>See what you’d earn.</h2><p class="p">You keep 72 cents of every dollar, even when affiliates bring the sale.</p></div></div>
+<div class="est">
+<div>
+<div class="big" id="net">$0</div>
+<p class="by" style="margin:8px 0 34px;font-size:15px" id="year"></p>
+<div class="row"><label for="pr">Price per sale <output id="prO"></output></label><input id="pr" type="range" min="10" max="500" step="5" value="60"></div>
+<div class="row"><label for="sl">Sales per month <output id="slO"></output></label><input id="sl" type="range" min="1" max="200" value="30"></div>
+<div class="row"><label for="af">Sales brought by affiliates <output id="afO"></output></label><input id="af" type="range" min="0" max="90" step="5" value="30"></div>
+</div>
+<div class="bars">
+<div class="br k2" id="b1"><i></i><span>You keep</span><span id="v1"></span></div>
+<div class="br" id="b2"><i></i><span>Affiliate payouts (20% of affiliate sales)</span><span id="v2"></span></div>
+<div class="br" id="b3"><i></i><span>Ethos fee (8%)</span><span id="v3"></span></div>
+<div class="f">Rates shown are illustrative for this concept preview.</div>
+</div>
+</div>
+</div></section>
+
+<section class="s" id="sellers"><div class="wrap">
+<div class="sh"><div><h2>Built for people who sell.</h2></div></div>
+<div class="ft">
+<div class="fc"><div class="ic">S</div><h3>One storefront</h3><p>List services, products, and memberships on a single page with your name, your prices, and your reviews.</p></div>
+<div class="fc"><div class="ic">%</div><h3>Affiliates built in</h3><p>Every listing has a share link. Promoters earn 20% of each sale they bring, so your audience grows without ad spend.</p></div>
+<div class="fc"><div class="ic">✓</div><h3>Escrow on every order</h3><p>Buyers pay up front and funds are held until the work is approved. Payouts reach you within 48 hours.</p></div>
+</div>
+</div></section>
+
+<section class="s" id="dash"><div class="wrap"><div class="sh"><div><h2>Run it all from one dashboard.</h2><p class="p">Orders, deliveries, payouts, and activity for your whole storefront in one calm view.</p></div></div>
+<div class="dash" aria-label="Sample seller dashboard"><div class="sb" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="10" rx="5" fill="#f59a3c"/><rect x="6" y="28" width="36" height="10" rx="5" fill="#6fdc57"/><rect x="6" y="42" width="22" height="10" rx="5" fill="#2f9a45"/></svg><b class="on">▦</b><b>◔</b><b>✉</b><b>☰</b><b>⚙</b></div>
+<div class="dm"><div class="dsr">⌕ &nbsp;Search orders, clients, or listings</div>
+<div class="lc"><div class="st"><div class="sc" style="--a:#d9e08a"><small>Pending<br>orders</small><b>12</b></div><div class="sc" style="--a:#a9dcd2"><small>In progress<br>orders</small><b>7</b></div><div class="sc" style="--a:#f3c3b6"><small>Completed<br>orders</small><b>243</b></div></div>
+<div class="gl"><h4>Order timeline</h4><div id="tl"></div></div>
+<div class="gl"><h4>Last actions</h4><div id="la"></div></div></div>
+<div class="rc"><div class="gl"><small>Next payout</small><div class="pay">$1,548.00</div><small>Released from escrow on Friday</small><div class="bt"><button class="pk">Withdraw</button><button class="dk">Details</button></div></div>
+<div class="gl"><h4>Deliveries due</h4><label class="dl"><span><b>Brand identity</b><small>Fri, 4:00 PM</small></span><input type="checkbox" checked aria-label="Remind me"></label><label class="dl"><span><b>Notion CRM</b><small>Sat, 10:00 AM</small></span><input type="checkbox" checked aria-label="Remind me"></label><label class="dl"><span><b>Shopify setup</b><small>Mon, 2:30 PM</small></span><input type="checkbox" aria-label="Remind me"></label></div>
+<div class="gl"><h4>Sales this week</h4><div class="act" id="ac"></div></div></div>
+</div></div><p class="ff" style="margin-top:14px;font-size:12px;color:var(--dim)">Sample data for this concept preview.</p></div></section>
+
+<div class="fin"><h2>Your first sale is closer than you think.</h2><p>Set up a storefront in minutes and share it with the people who already trust you.</p><a class="btn lg" href="#top">Create your storefront</a></div>
+</main>
+<footer><div class="wrap"><span class="fl"><svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="14" width="52" height="10" rx="5" fill="#f59a3c"/><rect x="6" y="28" width="36" height="10" rx="5" fill="#6fdc57"/><rect x="6" y="42" width="22" height="10" rx="5" fill="#2f9a45"/></svg>© 2026 Ethos. Concept preview.</span><span>Listings and figures are sample data.</span></div></footer>
+<script>
+const L=[["Brand identity in 5 days","Maya Santos","Services",320,4.9,"M","#6fdc57,#14452a"],["Notion CRM for freelancers","Dev Patel","Templates",29,4.8,"N","#2a332c,#0a0d0b"],["11+ mock exam pack","Claire Hughes","Courses",45,5.0,"11","#f59a3c,#8a4a10"],["Shopify store setup","Rico Dela Cruz","Services",450,4.9,"S","#1f3a27,#080b09"],["Pro editors’ circle","Aiko Tan","Memberships",19,4.7,"P","#4fbf5a,#0f3a1e"],["Cold email playbook","Sam Okafor","Courses",79,4.8,"C","#38443b,#111612"],["Weekly CV review","Leah Brooks","Services",35,5.0,"CV","#a6f08a,#3a9a4a"],["Budget tracker sheets","Nico Reyes","Templates",15,4.6,"B","#27332a,#0b0f0c"]];
+const cats=["All",...new Set(L.map(x=>x[2]))];let cur="All",qs="";const $=i=>document.getElementById(i);
+function pills(){$("hcats").innerHTML=cats.map(c=>`<button class="pill" aria-pressed="${c===cur}" data-c="${c}">${c}</button>`).join("")}
+function grid(){const r=L.filter(x=>(cur==="All"||x[2]===cur)&&(x[0]+x[1]+x[2]).toLowerCase().includes(qs));
+$("grid").innerHTML=r.length?r.map(x=>{const g=x[6].split(",");return`<article class="card"><div class="art" style="background:linear-gradient(135deg,${g[0]},${g[1]})">${x[5]}</div><div class="b"><span class="k">${x[2]}</span><h3>${x[0]}</h3><span class="by">by ${x[1]}</span><div class="meta"><span>$${x[3]}</span><span class="by">★ ${x[4].toFixed(1)}</span></div></div></article>`}).join(""):`<div class="empty">No listings match that search. Try another word or pick a different category.</div>`}
+$("hcats").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.c;pills();grid();$("browse").scrollIntoView()});
+$("sf").addEventListener("submit",e=>{e.preventDefault();qs=$("q").value.trim().toLowerCase();grid();$("browse").scrollIntoView()});
+pills();grid();
+let n=0;function sale(){const x=L[n++%L.length],g=x[6].split(",");const d=document.createElement("div");d.className="fr";d.innerHTML=`<div class="th" style="background:linear-gradient(135deg,${g[0]},${g[1]})">${x[5]}</div><div><b>${x[0]}</b><small>${x[1]} just made a sale</small></div><span class="amt">+$${x[3]}</span>`;const f=$("fl");f.prepend(d);while(f.children.length>3)f.lastChild.remove()}
+sale();sale();sale();if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setInterval(sale,2800);
+const m=v=>"$"+Math.round(v).toLocaleString("en-US");
+function calc(){const p=+$("pr").value,s=+$("sl").value,a=+$("af").value,g=p*s,f=g*.08,ap=g*(a/100)*.2,v=g-f-ap;
+$("prO").textContent=m(p);$("slO").textContent=s;$("afO").textContent=a+"%";
+$("net").textContent=m(v);$("year").textContent="About "+m(v*12)+" a year after fees and affiliate payouts";
+[[1,v],[2,ap],[3,f]].forEach(([k,x])=>{$("v"+k).textContent=m(x)+" ("+Math.round(x/g*100)+"%)";$("b"+k).firstChild.style.setProperty("--w",(x/g*100)+"%")})}
+["pr","sl","af"].forEach(i=>$(i).addEventListener("input",calc));calc();
+const D=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],C=["#9af27a","#5fcf6c","#2f9e4a","#f59a3c"];
+$("tl").innerHTML=`<div class="tr th2"><span></span><div class="trk">${D.map(d=>`<em>${d}</em>`).join("")}</div></div>`+[["Maya Santos","Brand identity",14,44,1],["Dev Patel","Notion CRM",0,30,0],["Claire Hughes","11+ mock pack",32,38,0],["Rico Dela Cruz","Shopify setup",52,46,1]].map(r=>`<div class="tr"><span>${r[0]}</span><div class="trk"><div class="bar${r[4]?" on":""}" style="--l:${r[2]}%;--w:${r[3]}%">${r[1]}</div></div></div>`).join("");
+$("la").innerHTML=[["Tomas Lee","Brand identity delivered","Completed","11:34 am"],["Ana Cruz","Revision requested on mock pack","In progress","10:43 am"],["Kofi Mensah","New order: Shopify store setup","New","9:12 am"]].map((r,i)=>`<div class="lr" style="margin-left:${i*14}px"><div><b>${r[0]}</b><small>${r[1]}</small></div><span class="bd ${r[2][0]}">${r[2]}</span></div>`).join("");
+$("ac").innerHTML=D.map((d,i)=>`<div><div class="day">${Array.from({length:[5,8,9,6,7,2,1][i]},(_,j)=>`<i style="background:${C[(i+j)%4]}"></i>`).join("")}</div><small>${d}</small></div>`).join("");
+</script>
+</body>
+</html>
